@@ -1,0 +1,37 @@
+<div class="row">
+
+    <div class="col ml-4">
+    </div>
+  
+    <div class="col ml-4">
+      <h1>
+        Welcome to SEESKY !
+      </h1>
+      <img width="300" alt="Angular Logo" src="./assets/nasa.png">
+    </div>
+  
+    <div class="col ml-4 m-auto" >
+      
+      </div>
+    
+  </div>
+
+  
+  <div *ngIf="picture; else noLoaded" style="text-align:center">
+      <h3 class="p-3 mb-2 bg-info text-white" > Picture of the date: {{picture.date}} </h3>
+    <h3 class="mb-5">
+      Picture : {{ picture.title}}
+    </h3>
+    <img src="{{picture.url}}" >
+    
+    <p> 
+      Explanation: {{ picture.explanation}}
+    </p>
+  </div>  
+
+  <ng-template #noLoaded> 
+      <div>
+        Please enter a valid date between  1995-06-16 and Today; with the correct format: YYYY-MM-DD
+        </div>
+    
+    </ng-template>

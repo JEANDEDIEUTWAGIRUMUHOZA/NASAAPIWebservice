@@ -1,0 +1,43 @@
+
+<div class="row">
+
+    <div class="col ml-4">
+    </div>
+  
+    <div class="col ml-4">
+      <h1>
+        Welcome to SEESKY !
+      </h1>
+      <img width="300" alt="Angular Logo" src="./assets/nasa.png">
+    </div>
+  
+    <div class="col ml-4 m-auto" >
+        Choose a date starting from Jun 16, 1995:
+        <form class="form-inline" >
+            <input
+              class="form-control"
+              [(ngModel)]="date"
+              type="search"
+              name="search"
+              placeholder="YYYY-MM-DD">
+             <button class="btn btn-outline-success" routerLink="/search/{{date}}" type="button">
+              Search
+            </button>
+          </form>
+  
+      </div>
+  
+  
+  </div>
+  
+  <h3 class="p-3 mb-2 bg-info text-white" >Here you can find the picture of the sky every day. It is observed by the NASA!!  </h3>
+  <div *ngIf=picture style="text-align:center" >
+    <h3 class="mb-5">
+      Picture of Today: {{ picture.title}}
+    </h3>
+    <img class="test" src="{{picture.url}}" >
+    
+    <p class="p-3 mt-2"> 
+      Explanation: {{ picture.explanation}}
+    </p>
+  </div>
